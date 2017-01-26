@@ -90,6 +90,8 @@ namespace Academy.HoloToolkit.Unity
 
         /// <summary>
         /// Revert back to the default GestureRecognizer.
+        /// (Currently set to be the navigation gestures).
+        /// Called by HandsManager::ResetFocusedGameObject()
         /// </summary>
         public void ResetGestureRecognizers()
         {
@@ -133,9 +135,7 @@ namespace Academy.HoloToolkit.Unity
             NavigationPosition = relativePosition;
         }
 
-        private void NavigationRecognizer_NavigationUpdatedEvent(InteractionSourceKind source,
-                                                                 Vector3 relativePosition,
-                                                                 Ray ray)
+        private void NavigationRecognizer_NavigationUpdatedEvent(InteractionSourceKind source, Vector3 relativePosition, Ray ray)
         {
             // 2.b: Set IsNavigating to be true.
             IsNavigating = true;
@@ -155,7 +155,7 @@ namespace Academy.HoloToolkit.Unity
             IsNavigating = false;
         }
 
-        // see GestureAction.cs
+        // see Assets/Scripts/GestureAction.cs
         private void ManipulationRecognizer_ManipulationStartedEvent(InteractionSourceKind source, Vector3 position, Ray ray)
         {
             if (HandsManager.Instance.FocusedGameObject != null)

@@ -4,7 +4,7 @@ using UnityEngine.VR.WSA.Input;
 namespace Academy.HoloToolkit.Unity
 {
     /// <summary>
-    /// Show a hand guidance indicator when the user's hand is close to leaving the camera's view.
+    /// Show a hand guidance indicator when the user's hand is close to leaving the camera's view
     /// </summary>
     public class HandGuidance : Singleton<HandGuidance>
     {
