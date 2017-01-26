@@ -123,9 +123,8 @@ namespace Academy.HoloToolkit.Unity
         }
 
         // see https://docs.unity3d.com/ScriptReference/VR.WSA.Input.GestureRecognizer.html for eventdelegate signatures
-        private void NavigationRecognizer_NavigationStartedEvent(InteractionSourceKind source,
-                                                                 Vector3 relativePosition,
-                                                                 Ray ray)
+        // see GestureAction.cs
+        private void NavigationRecognizer_NavigationStartedEvent(InteractionSourceKind source, Vector3 relativePosition, Ray ray)
         {
             // 2.b: Set IsNavigating to be true.
             IsNavigating = true;
@@ -156,6 +155,7 @@ namespace Academy.HoloToolkit.Unity
             IsNavigating = false;
         }
 
+        // see GestureAction.cs
         private void ManipulationRecognizer_ManipulationStartedEvent(InteractionSourceKind source, Vector3 position, Ray ray)
         {
             if (HandsManager.Instance.FocusedGameObject != null)

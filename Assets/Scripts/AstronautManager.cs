@@ -4,6 +4,10 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
 
+/// <summary>
+/// Used to manage the astornaut gameObject (such as which gesture recognizer 
+/// it is currently using and what voice commands it recognizes).
+/// </summary>
 public class AstronautManager : Singleton<AstronautManager>
 {
     float expandAnimationCompletionTime;
